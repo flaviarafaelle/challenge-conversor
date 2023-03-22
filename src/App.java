@@ -1,20 +1,15 @@
-import java.io.ObjectInputStream.GetField;
-
-import javax.swing.* ;
+import javax.swing.*;
+import java.util.regex.*;
 
 public class App {
-    /**
-     * @param args
-     * @throws Exception
-     */
     public static void main(String[] args) throws Exception {
 
         // escolha de conversor
-        String[] options = {"Conversor de Moeda", "Conversor de Temperatura"};
+        String[] opcoes = {"Conversor de Moeda", "Conversor de Temperatura"};
     
-        String input = (String)JOptionPane.showInputDialog(null, "Escolha uma opção", 
-                "Menu", JOptionPane.QUESTION_MESSAGE, null, options, options[0]);
-        System.out.println(input);
+        String inputMenu = (String)JOptionPane.showInputDialog(null, "Escolha uma opção", 
+                "Menu", JOptionPane.QUESTION_MESSAGE, null, opcoes, opcoes[0]);
+        System.out.println(inputMenu);
 
         //moedas
         String[] moedas = {
@@ -36,7 +31,12 @@ public class App {
 
         // valor a ser recebido
         String valor = JOptionPane.showInputDialog("Insira um valor:");
-        // System.out.println(valor);
-        // validar entrada
+		Pattern p = Pattern.compile("[A-Z,a-z,&%$#@!()*^]");
+		Matcher m = p.matcher(valor);
+		if (m.find()) {
+	     JOptionPane.showMessageDialog(null, "Por favor, digite apenas números");
+		}
+        System.out.println(valor);
+
     }               
 }
