@@ -4,7 +4,7 @@ import javax.swing.*;
 import java.util.Objects;
 
 public class ConverteTemperatura {
-    
+
     public double converterCelsiusParaFahrenheit(double valorRecebido) {
         double celsiusParaFahrenheit = valorRecebido * 1.8 + 32;
         celsiusParaFahrenheit = (double) Math.round(celsiusParaFahrenheit * 100d) / 100;
@@ -39,4 +39,5 @@ public class ConverteTemperatura {
         JOptionPane.showMessageDialog(null, valorRecebido + " Kelvin são " + kelvinParaFahrenheit + " Fahrenheit");
         return kelvinParaFahrenheit;
     }
+
 }

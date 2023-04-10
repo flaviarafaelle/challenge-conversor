@@ -7,7 +7,7 @@ import javax.swing.JOptionPane;
 import java.util.Objects;
 
 public class Funcao {
-    
+
     ConverteMoedas moedas = new ConverteMoedas();
     ConverteMoedasParaReais reais = new ConverteMoedasParaReais();
 
@@ -22,8 +22,31 @@ public class Funcao {
             case "De Reais a Euros":
                 moedas.converterReaisParaEuros(valorRecebido);
                 break;
+            case "De Reais a Libras":
+                moedas.converterReaisParaLibras(valorRecebido);
+                break;
+            case "De Reais a Peso Argentino":
+                moedas.converterReaisParaPesosArgentinos(valorRecebido);
+                break;
+            case "De Reais a Peso Chileno":
+                moedas.converterReaisParaPesosChilenos(valorRecebido);
+                break;
+            case "De Dólares a Reais":
+                reais.converterDolaresParaReais(valorRecebido);
+                break;
+            case "De Euros a Reais":
+                reais.converterEurosParaReais(valorRecebido);
+                break;
+            case "De Libras a Reais":
+                reais.converterLibrasParaReais(valorRecebido);
+                break;
+            case "De Peso Argentino a Reais":
+                reais.converterPesosArgentinosParaReais(valorRecebido);
+                break;
+            case "De Peso Chileno a Reais":
+                reais.converterPesosChilenosParaReais(valorRecebido);
+                break;
         }
-
-
     }
 }
+
